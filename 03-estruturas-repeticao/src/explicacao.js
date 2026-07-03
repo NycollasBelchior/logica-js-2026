@@ -68,9 +68,23 @@ if(tentativas > 0){
  */
  
 
-    for (let i = 1 ; i <= quantidade; i++){
+   /*  for (let i = 1 ; i <= quantidade; i++){  // melhor com listas
         let notas = leia.questionFloat("digite sua nota: ")
         somaNotas += notas;
     }
     let media = somaNotas / quantidade
     console.log("media: " + media)
+ *//*  */
+
+let finalizouNota = false;
+while(!finalizouNota){
+    let notas = leia.questionFloat("digite a "+ contador +" nota: ");
+    somaNotas += notas;
+if (contador === 5){
+    finalizouNota = true;
+}
+contador++
+
+}
+
+
