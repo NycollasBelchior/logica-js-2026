@@ -15,27 +15,38 @@ let pontos = 0;
 let direcao = "d";
 let gameOver = false;
 
-function desenhar(){
+function desenhar() {
     let tela = "";
     tela += "=== JOGO DA COBRINHA ===\n";
     tela += "W A S D = MOVER | Q = Sair\n";
     tela += "pontos " + pontos + "\n\n";
 
-    for(let y = -1; y <= ALTURA; y++){
+    for (let y = -1; y <= ALTURA; y++) {
         let linha = "";
-        
-        for(let x= -1; x <= LARGURA;x++){
-            if(x === -1 || x === LARGURA || y === -1 || y === ALTURA){
+
+        for (let x = -1; x <= LARGURA; x++) {
+            if (x === -1 || x === LARGURA || y === -1 || y === ALTURA) {
                 linha += PAREDE;
-            }else if(x === comidaX && y === comidaY){
+            } else if (x === comidaX && y === comidaY) {
                 linha += COMIDA;
             }
-            else{
-                linha +=VAZIO
-            }   
+            else {
+                let desenhocobrinha = false
+
+                for (var i = 0; i < cobraX.length; i++) {
+                    if (cobraX[i] === x && cobraY === y) {
+                        linha += (i ===0) ? CABECA : CORPO;
+                        desenhocobrinha = true;
+                    }
+                }
+                if (desenhocobrinha === false){
+                    linha += VAZIO
+                }
+            }
         }
         tela += linha + "\n"
     }
     process.stdout.write("\x1b[H" + tela);
 }
+
 desenhar();
