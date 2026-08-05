@@ -11,18 +11,22 @@ export function exercicio07(){
     let son = []
 
     for(let i = 0; i <= 50; i++){
-     mae[i] = Math.floor(Math.random() * 100) + 1
-     pai[i] = Math.floor(Math.random() * 100) + 1
+     mae[i] = Math.floor(Math.random() * 50) + 1
+     pai[i] = Math.floor(Math.random() * 50) + 1
+    }
+    console.log("\npai: " + pai)
+    console.log("\nmae: " + mae)
 
-    if (pai[i] % 2 === 0){
-        
-        son.push(pai[i]);
+    for(let i = 0; i <= 50; i++){
+        if(pai[i]% 2 === 0){
+            son.push(pai[i])
+        }
+        else if(mae[i] % 2 === 1){
+            son.push(mae[i])
+        }
     }
-    else if (mae[i] % 2 === 1){
-        son.push(mae[i])
+
+    
+    console.log("\nfilho: " + son)
     }
-}
-console.log("filho : "+son)
-console.log("pai : " +pai)
-console.log("mae : " + mae)
-}
+

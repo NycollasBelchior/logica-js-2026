@@ -6,6 +6,7 @@ import { exercicio04 } from './exercicio04.js';
 import { exercicio05 } from './exercicio05.js';
 import { exercicio06 } from './exercicio06.js';
 import { exercicio07 } from './exercicio07.js';
+import { exercicio08 } from './exercicio08.js';
 
 
 
@@ -48,4 +49,6 @@ else if (exercicios === 5){
 else if (exercicios === 6){
     exercicio07()
 }
-
+else if (exercicio === 7){
+    exercicio08()
+}
